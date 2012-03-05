@@ -1,0 +1,80 @@
+===
+Facebook
+===
+
+https://developers.facebook.com/policy/#features
+
+these are worth paying attention to but we should be ok as long as we focus on
+the inside fb experience.
+
+11.Apps on Facebook may not integrate, link to, promote, distribute, or redirect
+to any app on any other competing social platform.
+
+12.The primary purpose of your Canvas or Page Tab app on Facebook must not be to
+simply redirect users out of the Facebook experience and onto an external site.
+
+
+https://developers.facebook.com/policy/#data
+
+need to be careful about these in poco and ostatus. maybe switch to their
+User.third_party_id, like they suggest?
+https://developers.facebook.com/docs/reference/api/user/
+
+...no, because you can't map it back to a user. still, this is dangerous because
+we are passing it to third parties like they say we can't. maybe use it anyway?
+
+7.You will not use Facebook User IDs for any purpose outside your application
+(e.g., your infrastructure, code, or services necessary to build and run your
+application). Facebook User IDs may be used with external services that you use
+to build and run your application, such as a web infrastructure service or a
+distributed computing platform, but only if those services are necessary to
+running your application and the service has a contractual obligation with you
+to keep Facebook User IDs confidential.
+
+8.If you need an anonymous unique identifier to share outside your application
+with third parties such as content partners, advertisers, or ad networks, you
+must use our mechanism. You must never share this anonymous unique identifier
+with a data broker, information broker, or any other service that we may define
+as such under our sole discretion.
+
+
+https://developers.facebook.com/policy/#data
+
+can only use friend connections/graph if *both* users have opted into app:
+
+11.You cannot use a user’s friend list outside of your application, even if a
+user consents to such use, but you can use connections between users who have
+both connected to your application.
+
+If a user grants you a publishing permission, you must still obtain consent from
+the user before taking any action on the user's behalf, such as publishing
+content or creating an event.
+
+
+https://developers.facebook.com/policy/#integration
+
+need per post opt in for fanning in posts from this user's acct on other
+networks? at least, if we actually post on their behalf.
+
+3.If a user grants you a publishing permission, you must still obtain consent
+from the user before taking any action on the user's behalf, such as publishing
+content or creating an event.
+
+
+
+===
+Twitter
+===
+
+https://dev.twitter.com/terms/api-terms
+
+hrm. syndicating any data (beyond IDs) to any third party is totally banned,
+which covers basically the whole thing if using my app id(s). using their app id
+and me as a library would be ok though. my service but using their app id passed
+through, not sure...?
+
+I. 4. You will not attempt or encourage others to:
+    sell, rent, lease, sublicense, redistribute, or syndicate access to the Twitter API or Twitter Content to any third party without prior written approval from Twitter.
+        If you provide an API that returns Twitter data, you may only return IDs (including tweet IDs and user IDs).
+        You may export or extract non-programmatic, GUI-driven Twitter Content as a PDF or spreadsheet by using "save as" or similar functionality. Exporting Twitter Content to a datastore as a service or other cloud based service, however, is not permitted.
+
