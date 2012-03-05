@@ -80,3 +80,27 @@ I. 4. You will not attempt or encourage others to:
         If you provide an API that returns Twitter data, you may only return IDs (including tweet IDs and user IDs).
         You may export or extract non-programmatic, GUI-driven Twitter Content as a PDF or spreadsheet by using "save as" or similar functionality. Exporting Twitter Content to a datastore as a service or other cloud based service, however, is not permitted.
 
+similar:
+
+I. 5. E. You may not use Twitter Content or other data collected from end users of your Client to create or maintain a separate status update or social network database or service.
+
+
+these are worth noting but probably aren't actual problems to worry about:
+
+II. 1. B. (4) Get users' permission before...republishing Twitter Content
+accessed through means other than via the Twitter API or other tools that may be
+provided to you by Twitter, or in a manner inconsistent with the Display
+Guidelines.
+
+II 1. D. Respect the privacy and sharing settings of Twitter Content. Do not
+share, or encourage or facilitate the sharing of protected Twitter Content.
+Promptly change your treatment of Twitter Content (for example, deletions,
+modifications, and sharing options) as changes are reported through the Twitter
+API.
+
+II. 3. C. You should not solicit another developer's consumer keys or consumer
+secrets especially if they will be stored or used for actions outside of that
+developer's control. Keys and secrets that are compromised will be reset by
+Twitter. For example, online services that ask for these values in order to
+provide a "tweet-branding" service are not allowed.
+
