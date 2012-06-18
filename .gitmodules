@@ -1,0 +1,12 @@
+[submodule "python-push"]
+	path = python-push
+	url = git://github.com/brutasse/python-push.git
+[submodule "yagi"]
+	path = yagi
+	url = git://github.com/Cerberus98/yagi.git
+[submodule "PuSH-Subscriber"]
+	path = PuSH-Subscriber
+	url = git://github.com/adamac/PuSH-Subscriber.git
+[submodule "pubsubhubbub"]
+	path = pubsubhubbub
+	url = git://github.com/jcleblanc/pubsubhubbub.git
