@@ -15,36 +15,38 @@ handlers:
   upload: static/favicon.ico
 
 # dynamic
-- url: /(.well-known/.*|delete)?
+- url: /.well-known/.*
   script: app.py
-  secure: always
 
-- url: /facebook/.*
-  script: facebook.py
-  login: required
-  secure: always
+- url: /feed/.*
+  script: feed.py
 
-- url: /googleplus/.*
-  script: googleplus.py
-  login: required
-  secure: always
+# - url: /facebook/.*
+#   script: facebook.py
+#   login: required
+#   secure: always
 
-- url: /twitter/.*
-  script: twitter.py
-  login: required
-  secure: always
+# - url: /googleplus/.*
+#   script: googleplus.py
+#   login: required
+#   secure: always
 
-- url: /oauth2callback
-  script: oauth2client/appengine.py
-  secure: always
+# - url: /twitter/.*
+#   script: twitter.py
+#   login: required
+#   secure: always
 
-- url: /_ah/queue/.*
-  script: tasks.py
-  login: admin
+# - url: /oauth2callback
+#   script: oauth2client/appengine.py
+#   secure: always
+
+# - url: /_ah/queue/.*
+#   script: tasks.py
+#   login: admin
   
-- url: /.+
-  script: ostatus.py
-  secure: always
+# - url: /.+
+#   script: ostatus.py
+#   secure: always
 
 skip_files:
 - ^(.*/)?.*\.py[co]
