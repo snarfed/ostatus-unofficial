@@ -7,6 +7,7 @@ host-meta.xrds (XRDS-Simple), and host-meta.jrd (JRD ie JSON).
 
 __author__ = 'Ryan Barrett <ostatus@ryanb.org>'
 
+import appengine_config
 from webutil import handlers
 from webutil import webapp2
 
