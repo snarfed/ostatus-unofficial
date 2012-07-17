@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-XRDS-Location"
+        content="http://{{ host }}/.well-known/host-meta.xrds" />
+  <link href="/static/style.css" rel="stylesheet" type="text/css" />
+  <title>Salmon Unofficial</title>
+</head>
+
+<div id="description">
+<h1>Salmon Unofficial</h1>
+
+<a href="http://salmon-protocol.org/">
+  <img id="logo" src="/static/salmon.png" /></a>
+
+<p>This is an unofficial
+  <a href="http://www.salmon-protocol.org/">Salmon</a> generator
+for
+<a href="http://www.facebook.com/">Facebook</a>,
+<a href="http://twitter.com/">Twitter</a>, and
+<a href="https://plus.google.com/">Google+</a>. For more details, see the
+<a href="http://www.salmon-protocol.org/news/finalspecdraftsavailable">Salmon
+ specs</a> and the
+<a href="https://github.com/snarfed/salmon-unofficial">source for this site</a>.
+</p>
+
+<p>Questions? Contact <a href="http://snarfed.org/about">Ryan</a> or the
+<a href="http://groups.google.com/group/salmon-protocol">Salmon
+mailing list</a>.</p>
+
+<hr />
+</div>
+
+<h3>Sources</h3>
+
+<p>This site is currently generating Salmon slaps from these people's posts and
+comments and from tweets that include links to these domains. Add your own!</p>
+
+<form method="post" action="/facebook/add">
+  <input type="submit" value="Add your Facebook">
+</form>
+
+<form method="post" action="/googleplus/add">
+  <input type="submit" value="Add your Google+">
+</form>
+
+<form id="domains" method="post" action="/twitter/add">
+  <input type="submit" value="Add a domain on Twitter: " />
+  <!-- <label for="domain">Domain: </label> -->
+  <input id="domain" name="domain" type="text" size="16" />
+</form>
+<br />
+
+<table id="sources">
+{% for source in sources %}
+<tr><td>
+  <a href="{{ source.url }}">
+    <img class="source" src="{{ source.picture }}" /></a>
+</td><td>
+  <a href="{{ source.url }}">{{ source.display_name }}</a>
+</td><td>
+  ({{ source.type_display_name }})
+</td><td>
+  <form method="post" action="/delete">
+    <input name="kind" type="hidden" value="{{ source.kind }}" />
+    <input name="key_name" type="hidden" value="{{ source.key.name }}" />
+    <input type="image" src="static/red_x.png" title="Delete" />
+  </form>
+</td></tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

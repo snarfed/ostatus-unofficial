@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>  <!-- -*- xml -*- -->
+<XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0'>
+  <Link rel='lrdd'
+        type='application/xrd+xml'
+        template='https://{{ host }}/user?uri={uri}' />
+  <Link rel="salmon" href="https://{{ host }}/salmon/">
+    <Title>Salmon API endpoint</Title>
+  </Link>
+</XRD>
