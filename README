@@ -15,8 +15,26 @@ Deploy command:
 
 
 ===
-miscellaneous notes
+TODO:
+
+- add real atom support to activitystreams-unofficial. current one is really
+  just XML rendering of the activitystreams REST API. todo: only return that on
+  format=xml. for format=atom, follow example in evan_feed.atom, spec in
+  http://activitystrea.ms/specs/atom/1.0/ , and add extra ostatus:conversation
+  and ostatus:attention link rels as described in ostatus spec section 6.
+
+- publish activitystreams atom feed for user with profile data, salmon endpoint,
+  and push hub (section 11)
+
+- send status updates to federated friends via salmon w/ostatus:attention
+  - subscribe/unsubscribe with schema:follow and ostatus:unfollow
+  - etc in spec section 10
+
+- implement push server and send pings for events
+
+
 ===
+miscellaneous notes:
 
 other libraries and tools that might be useful for reuse or interop testing:
 
