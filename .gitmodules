@@ -10,3 +10,6 @@
 [submodule "webutil"]
 	path = webutil
 	url = git@github.com:snarfed/webutil.git
+[submodule "activitystreams-unofficial"]
+	path = activitystreams-unofficial
+	url = git@github.com:snarfed/activitystreams-unofficial.git

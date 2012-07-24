@@ -4,19 +4,27 @@
 
 __author__ = ['Ryan Barrett <ostatus@ryanb.org>']
 
+import json
+
 import feed
+
+from activitystreams import facebook_test
+from activitystreams import twitter_test
 from webutil import testutil
 
 
 class FeedTest(testutil.HandlerTest):
 
-  def test_feed(self):
-    pass
-    # facebook.Facebook(key_name='ryan').save()
-    # self.assertEqual(1, facebook.Facebook.all().count())
+  def test_facebook_feed(self):
+    self.expect_urlfetch('https://graph.facebook.com/ryan/posts?offset=0&limit=100',
+                         json.dumps({'data': [facebook_test.POST]}))
+    self.expect_urlfetch('https://graph.facebook.com/ryan',
+                         json.dumps(facebook_test.USER))
+    self.mox.ReplayAll()
 
-    # resp = app.application.get_response('/delete?kind=Facebook&key_name=ryan',
-    #                                     method='POST')
-    # self.assertEquals(302, resp.status_int, resp.body)
-    # self.assertEquals('http://localhost/', resp.headers['Location'])
-    # self.assertEqual(0, facebook.Facebook.all().count())
+    path = '/feed/acct:ryan@facebook.com/@self?format=atom'
+    resp = feed.application.get_response(path)
+    self.assertEquals(200, resp.status_int, resp.body)
+    self.assert_multiline_equals(
+      facebook_test.ATOM % {'request_url': 'http://localhost/ryan/%40self?format=atom'},
+      resp.body)

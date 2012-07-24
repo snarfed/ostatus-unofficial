@@ -5,8 +5,9 @@ import sys
 import os
 
 # git submodules to allow importing from
-# for dir in (,):
-#   sys.path.append(os.path.join(os.path.abspath("."), dir))
+for dir in ('activitystreams-unofficial',
+            ):
+  sys.path.append(os.path.join(os.path.abspath("."), dir))
 
 from webutil.appengine_config import *
 
