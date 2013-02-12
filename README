@@ -17,11 +17,10 @@ Deploy command:
 ===
 TODO:
 
-- add real atom support to activitystreams-unofficial. current one is really
-  just XML rendering of the activitystreams REST API. todo: only return that on
-  format=xml. for format=atom, follow example in evan_feed.atom, spec in
-  http://activitystrea.ms/specs/atom/1.0/ , and add extra ostatus:conversation
-  and ostatus:attention link rels as described in ostatus spec section 6.
+- merge all projects together into one codebase and app id? yes. but maybe later
+  after below. OR more likely, just double down on serving each protocol from
+  its own app id? e.g. serve atom feeds from salmon-unofficial, not
+  ostatus-unofficial? probably need to merge separate twitter/fb app ids though.1
 
 - publish activitystreams atom feed for user with profile data, salmon endpoint,
   and push hub (section 11)
