@@ -2,6 +2,14 @@ This is a unofficial OStatus implementation for major social networking sites
 that don't implement it themselves, including Facebook, Twitter, and Google+.
 It's deployed at http://ostatus-unofficial.appspot.com/
 
+It's part of a wider collection of OStatus and federated social web tools for
+Facebook, Twitter, and Google+:
+https://github.com/snarfed/activitystreams-unofficial
+https://github.com/snarfed/ostatus-unofficial
+https://github.com/snarfed/portablecontacts-unofficial
+https://github.com/snarfed/salmon-unofficial
+https://github.com/snarfed/webfinger-unofficial
+
 Source: https://github.com/snarfed/ostatus-unofficial
 Contact: Ryan Barrett <ostatus@ryanb.org>
 License: This project is placed in the public domain.
